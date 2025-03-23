@@ -1,0 +1,130 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Sora;
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    color: white;
+    height: 100vh;
+    /*
+    width: 100vw;
+    */
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(1,1fr);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+    text-decoration-color:#E1D7B7;
+}
+/*navbar------------------------------*/
+#navbar{
+    background-color:#1E2A5E;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px ;
+    align-items: center;
+    padding: 20px;
+    font-size: xx-small;
+}
+
+ul .HOME { 
+    padding: 10px;
+    list-style-image: url('img/home.ico');
+  }
+ul .ABOUTUS {
+    padding: 10px;
+    list-style-image: url('img/user.ico');
+  }
+ul .SERVICES {
+    padding: 10px;
+    list-style-image: url('img/list.ico');
+  }
+ul .CONTACTUS {
+    padding: 10px;
+    list-style-image: url('img/speech.ico');
+  }
+#logo{
+    padding: 10px;
+    text-align: center;
+    font-family: cursive;
+    font-weight:lighter;
+    font-size:xx-large;
+    color: #55679C;
+}
+/*-------------------------------------------------------------*/
+#container{
+    display: flex;
+    flex-direction: column;
+    background-color:#7C93C3;
+    padding: 20px;
+    height: 100%;
+    grid-column:2/9 ;
+    text-align: center;
+}
+.aboutuscontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen  and (min-width:992px) {
+
+    .aboutuscontainertext {
+        padding: 70px;
+        /* width: 100%; */
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+        gap: 10px;
+    }
+    
+}
+@media screen and (min-width:800px) and (max-width: 992px) { 
+    .aboutuscontainertext {
+        padding: 70px;
+        /* width: 100%; */
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) { 
+    body 
+    { 
+        background-color: #7C93C3;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(8,1fr);
+        height: 100vh;
+        /* width: 100%; */
+     }
+     #navbar{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        flex-direction: row;
+        gap: 20px;
+     }
+     #navbar ul{
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        flex-direction: row;
+     }
+     #container{
+        grid-column: 1/2;
+        grid-row: 2/9;
+     }
+
+}

@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    color: white;
+    font-family: NotoSerif ;
+    background: linear-gradient(to left,#E1D7B7 , #55679C );
+    width: 100vw;
+    height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    background-color: #7C93C3;
+    border-radius: 10% ;
+    border: 2px solid transparent;
+    width: 70%;
+    height: 80%;
+    position: relative; /*Sets the box as the reference point and Important for absolute positioning of children*/
+    /* overflow property controls what happens to content that is too big to fit into an area.*/
+    overflow: hidden; /*hides the value (the rest of the content would hide if there isnt enough space)*/
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: rgb(254, 253, 253);
+}
+a:hover{
+    text-decoration: underline;
+    text-decoration-color:#E1D7B7;
+}
+.signcontainer input{
+    height: 20px;
+    background-color: #55679C;
+    border: 2px #485783 solid;
+
+}
+button{
+    border: transparent;
+    width: 60%;
+    height: 20px;   
+    background-color:#E1D7B7 ;
+    border-radius: 10% 0% 10% 0%;
+    cursor: pointer;
+}
+#formsignin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#formsignup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.signin{
+    left: 0;
+    width: 50%;
+    gap: 10px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+    z-index: 3;/* Above the background */ 
+}
+.signup{
+    left: 0;
+    width: 50%;
+    gap: 10px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+    opacity: 0; /*the transparency level is 0 (we cant see it)*/
+    z-index: 2; /* Below the sign-in form */
+}
+.signcontainer{
+    position: absolute;
+    transition: all 0.6s ease-in-out;
+}
+/*-------------------------active css element (sliding motion for the forms sign in and up)----------------------------------------*/
+.active .signin{
+    opacity: 0;
+    transform: translateX(100%);
+}
+.active .signup{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 6;
+    animation: move 0.6s;
+}
+@keyframes move{
+    0%, 50%{
+        opacity: 0;
+        z-index: 2;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 6;
+    }
+}
+/* this animation makes the form sign up on top of form sign in when active (js fonction)*/
+/*---------------------------------------------------------*/
+
+.buttonswitch{
+    border: 1px solid #E1D7B7;
+    background-color: #1E2A5E;
+    color: white;
+}
+.switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+.switchcontainer{
+    border-radius: 20% 5% 5% 20%;
+    background-color: #1E2A5E;
+    width: 50%;
+    height: 100%;
+    position: absolute; /*stays in one place and Important for absolute positioning of children*/
+    left: 50%;
+    transition: all 0.6s ease-in-out;
+    transform: translateX(0);
+     /*overflow: hidden; */
+    /*overflow: hidden; */
+    /*hides the value (the rest of the content would hide if there isn't enough space)*/
+
+}
+.switchpart{
+    height: 100%;
+    width: 200%;
+    right: 100%;
+    position: relative;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+.switchright{
+    transform: translateX(-100%);
+    
+}
+.switchleft{
+    transform: translateX(0);
+    right: 0;
+}
+
+/*-------------------------active section----------------------------------------*/
+.active .switchpart{
+    transform: translateX(50%);
+}
+.active .switchcontainer{
+    transform: translateX(-100%);
+    border-radius: 5px 20px 20px 5px;
+}
+.active .switchright{
+    transform: translateX(0);
+}
+.active .switchleft{
+    transform: translateX(100%);
+}

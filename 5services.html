@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/awhitevalisewithaheadphones.webp">
+    <link rel="stylesheet" href="style.css">
+    <title>DigiPals</title>
+    <style>
+        .status{
+            justify-content: space-evenly;
+            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .status h1{
+            padding: 5px;
+            color: white;
+            font-size: x-small;
+            border-radius: 10%;
+            background-color: #E1D7B7 ;
+        }
+        
+        .status h1:hover{
+            cursor: pointer;
+            background-color: #d3caab;
+        }
+        img{
+            border-radius: 10%;
+            width :100% ;
+            height :100% ;
+        }
+        .container {
+            border-radius: 10%;
+            overflow: hidden;
+            padding: 20px;
+            width: 250px ;
+            height: 300px;
+            perspective: 800px;
+        }
+        .container:hover > .card{
+            cursor: pointer;
+            transform: rotateY(-360deg) ;
+        }
+        /*the container got the hover to avoid bugging and the > telling the container to applay the hover on the card*/
+        .front:hover{
+            z-index: 2;
+        }
+        .back:hover{
+            z-index: 3;
+            transform: rotateX('-180deg');
+        }
+        .cardbox{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+          
+            justify-content: center;
+        }
+        .card{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            transition: transform 1s;
+            /*
+            transform-style:preserve-3d ;*/
+        }
+        .front{
+            
+            border-radius: 10%;
+            z-index: 3;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            
+            }
+        .back{
+            
+            border-radius: 10%;
+            z-index: 2;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100%;
+            width: 100%;
+            background-color: #55679C;
+            color: #E1D7B7;
+            
+        }
+
+        .aboutuscontainer{
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            
+        }
+
+            .resultbox{
+                padding: 0px 10px;
+                list-style: none;
+                max-width: 250px;
+                text-align: left;
+                background-color: #55679C;
+                border-radius: 0% 0% 6% 6%;
+            }
+            .recherche{
+                border-radius: 6% 6% 0% 0%;
+                color: #E1D7B7;
+            }
+            .shearchbox input{
+                background-color: #55679C;
+            }
+            .resultbox ul{
+                border-top: 1px solid #999;
+                padding: 15px 10px;
+                list-style: none;
+                text-align: left;
+
+            }
+            .resultbox ul li{ 
+                list-style: none;
+                 border-radius: 3px; 
+                  padding: 15px 10px;
+                  cursor: pointer;
+            }
+            .resultbox ul li:hover{
+                background-color: #b4b3b3;
+            }
+            .recherche input {
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                min-width: 100%;
+                min-height: 25px;
+                font-size: small;    
+                    
+            }
+            .recherche{
+                display: flex;
+            }
+            .shearicon{
+                position: absolute;
+            }
+
+            @media screen and (min-width:500px) {
+                .cardbox{
+                    justify-content: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+              
+    </style>
+</head>
+<body>
+    <div id="navbar" class="servicesnavbar">
+        <div id="logo">DigiPals</div>
+        <div id="list">
+            <ul>
+                <li class="HOME">
+                    <a href="4home.html">HOME</a>
+                </li>
+                <li class="ABOUTUS">                     
+                    <a href="1aboutUs.html">ABOUT US</a>
+                </li>
+                <li class="SERVICES"> 
+                    <a href="5services.html">SERVICES</a>
+                </li>
+                <li class="CONTACTUS">
+                    <a href="6contactUs.html">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+    <div id="container" class="aboutuscontainer">
+        <div class="shearchbox">
+            <div class="recherche">
+                <input type="text" placeholder=" Search..." class="inputbox" >
+            </div>
+            <div class="resultbox" >   
+            </div>
+        </div>
+        <h2 style="left: 0;
+        font-weight: normal;
+        color: #d3caab;
+        margin: -50px;
+        background-color: #55679C;
+        border-radius: 10%;
+        width:300px;"> our headphones : </h2>
+        <div class="cardbox headphone">
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/img1.jpg" alt="jbl headphones" >
+                    </div>
+                    <div class="back">
+                        <p> JBL headphones  <br>for just:</p>
+                        <h1> 240d</h1>
+                        <del>299d
+                        </del>
+                        <div class="status">
+                            <h1>headphone</h1>
+                            <h1>bestseller</h1>
+                            <h1>JBL</h1>   
+                            <h1>white</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front">
+                        <img src="./img/JBL Tune 720BT Noir - Casque.jpeg" alt="...........">
+                    </div>
+                    <div class="back">
+                        <p> JBL headphones  <br>for just:</p>
+                        <h1> 399d</h1>
+                        <div class="status">
+                            <h1>headphone</h1>
+                            <h1>bestseller</h1>
+                            <h1>JBL</h1>   
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/JBL TUNE 660NC Wireless On Ear Headphones with Active Noise Cancellation (Blue).jpeg" alt="jbl headphones" >
+                    </div>
+                    <div class="back">
+                        <p> JBL headphones  <br>for just:</p>
+                        <h1> 299d</h1>
+                        <div class="status">
+                            <h1>headphone</h1>
+                            <h1>JBL</h1>   
+                            <h1>Blue</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front">
+                        <img src="./img/Sony WH1000XM4 Wireless Noise-Cancelling Over-the-Ear Headphones Silver WH1000XM4_S - Best Buy.jpeg" alt="...........">
+                    </div>
+                    <div class="back">
+                        <p> Sony headphones  <br>for just:</p>
+                        <h1> 269d</h1>
+                        <div class="status">
+                            <h1>headphone</h1>
+                            <h1>Sony</h1>   
+                            <h1>beige</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 style="left: 0;
+        font-weight: normal;
+        color: #d3caab;
+        margin: -50px;
+        background-color: #55679C;
+        border-radius: 10%;
+        width:300px;"> our speakers : </h2>
+        <div class="cardbox speaker">
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/dellspeaker.jpg" alt="dell speaker" >
+                    </div>
+                    <div class="back">
+                        <p> dell speaker <br>for just:</p>
+                        <h1> 450d</h1>
+                        <del>599d
+                        </del>
+                        <div class="status">
+                            <h1>speaker</h1> 
+                            <h1>DELL</h1>   
+                            <h1>white</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front">
+                        <img src="./img/Enceinte Portable Go3 - Jblgo3blk - Noir Jbl.jpeg" alt="jbl speaker">
+                    </div>
+                    <div class="back">
+                        <p> JBL speaker <br>for just:</p>
+                        <h1> 119d</h1>
+                        <div class="status">
+                            <h1>speaker</h1>   
+                            <h1>JBL</h1>   
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/jblspeakerblack.jpeg" alt="jbl speaker" >
+                    </div>
+                    <div class="back">
+                        <p> JBL speaker  <br>for just:</p>
+                        <h1> 215d</h1>
+                        <div class="status">
+                            <h1>JBL</h1>   
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front">
+                        <img src="./img/speakerlenovo.jpg" alt="speaker lenovo">
+                    </div>
+                    <div class="back">
+                        <p> LENOVO speaker  <br>for just:</p>
+                        <h1> 45d</h1>
+                        <div class="status">
+                            <h1>lenovo</h1>   
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 style="left: 0;
+        font-weight: normal;
+        color: #d3caab;
+        margin: -50px;
+        background-color: #55679C;
+        border-radius: 10%;
+        width:300px;"> our laptops : </h2>
+        <div class="cardbox laptop">
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/lenovopc.jpg" alt="lenovo pc" >
+                    </div>
+                    <div class="back">
+                        <p> LENOVO laptop <br>for just:</p>
+                        <h1> 1059d</h1>
+                        <div class="status">
+                            <h1>laptop</h1> 
+                            <h1>lenovo</h1>   
+                            <h1>Blue</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front">
+                        <img src="./img/DELllaptop.webp" alt="dell laptop">
+                    </div>
+                    <div class="back">
+                        <p> DELL laptop <br>for just:</p>
+                        <h1> 2639d</h1>
+                        <div class="status">
+                            <h1>laptop</h1>   
+                            <h1>dell</h1>   
+                            <h1>grey</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/black-dell-laptop.jpg" alt="dell laptop" >
+                    </div>
+                    <div class="back">
+                        <p> DELL laptop <br>for just:</p>
+                        <h1> 1453d</h1>
+                        <div class="status">
+                            <h1>laptop</h1>   
+                            <h1>dell</h1>   
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 style="left: 0;
+        font-weight: normal;
+        color: #d3caab;
+        margin: -50px;
+        background-color: #55679C;
+        border-radius: 10%;
+        width:300px;"> our cameras : </h2>
+        <div class="cardbox camera">
+            <div class="container">
+                <div class="card" >
+                    <div class="front">
+                        <img src="./img/Sony A7 II Review.jpeg" alt="lenovo pc" >
+                    </div>
+                    <div class="back">
+                        <p> SONY camera <br>for just:</p>
+                        <h1> 1059d</h1>
+                        <div class="status">
+                            <h1>camera</h1>  
+                            <h1>sony</h1> 
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front">
+                        <img src="./img/dellcamera.jpg" alt="dell laptop">
+                    </div>
+                    <div class="back">
+                        <p> DELL camera <br>for just:</p>
+                        <h1> 1500d</h1>
+                        <div class="status">
+                            <h1>camera</h1>   
+                            <h1>dell</h1>   
+                            <h1>black</h1>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script  src="Search.js"></script>
+</body>
+</html>
